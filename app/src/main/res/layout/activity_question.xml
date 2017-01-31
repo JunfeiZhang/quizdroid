@@ -78,7 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Submit"
-        android:id="@+id/submit_btn"
+        android:id="@+id/submit"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/radioGroup"
         android:layout_centerHorizontal="true" />

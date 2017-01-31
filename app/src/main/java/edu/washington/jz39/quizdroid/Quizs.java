@@ -54,7 +54,7 @@ public class Quizs extends Activity {
         yourAnswer = (TextView) findViewById(R.id.your_answer_text);
         correctAnswer = (TextView) findViewById(R.id.correct_answer_text);
 
-        submit = (Button) findViewById(R.id.submit_btn);
+        submit = (Button) findViewById(R.id.submit);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

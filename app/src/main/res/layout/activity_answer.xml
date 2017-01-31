@@ -14,9 +14,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Finish"
-        android:id="@+id/finish_btn"
+        android:id="@+id/finish"
         android:layout_below="@+id/correct_answer_text"
-        android:layout_alignRight="@+id/next_btn"
+        android:layout_alignRight="@+id/next"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:visibility="gone"/>
@@ -27,7 +27,7 @@
         android:text="You have 0 out of 3 correct"
         android:textSize="15dp"
         android:id="@+id/total_correct_text"
-        android:layout_alignBottom="@+id/next_btn"
+        android:layout_alignBottom="@+id/next"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="72dp" />
 
@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Next"
-        android:id="@+id/next_btn"
+        android:id="@+id/next"
         android:layout_marginBottom="36dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />

@@ -101,11 +101,11 @@ public class Topics extends Activity {
             });
         }
 
-        submit = (Button) findViewById(R.id.submit_btn);
+        submit = (Button) findViewById(R.id.submit);
         yourAnswer = (TextView) findViewById(R.id.your_answer_text);
         correctAnswer = (TextView) findViewById(R.id.correct_answer_text);
-        next = (Button) findViewById(R.id.next_btn);
-        finish = (Button) findViewById(R.id.finish_btn);
+        next = (Button) findViewById(R.id.next);
+        finish = (Button) findViewById(R.id.finish);
     }
 
 

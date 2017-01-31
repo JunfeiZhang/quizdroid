@@ -57,8 +57,8 @@ public class Answer extends Activity {
         TextView yourAnswer = (TextView) findViewById(R.id.your_answer_text);
         TextView correctAnswer = (TextView) findViewById(R.id.correct_answer_text);
 //        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
-        next = (Button) findViewById(R.id.next_btn);
-        finish = (Button) findViewById(R.id.finish_btn);
+        next = (Button) findViewById(R.id.next);
+        finish = (Button) findViewById(R.id.finish);
 //        int selected_id = radioGroup.getCheckedRadioButtonId();
 //        RadioButton answer = (RadioButton) findViewById(selected_id);
 
@@ -80,7 +80,7 @@ public class Answer extends Activity {
             finish.setVisibility(View.VISIBLE);
         }
 
-        next = (Button) findViewById(R.id.next_btn);
+        next = (Button) findViewById(R.id.next);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,7 +98,7 @@ public class Answer extends Activity {
             }
         });
 
-        finish = (Button) findViewById(R.id.finish_btn);
+        finish = (Button) findViewById(R.id.finish);
         finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
