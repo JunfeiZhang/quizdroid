@@ -45,11 +45,11 @@ public class Answer extends Activity {
         total_correct = b.getInt("total correct");
 
         if (topic.equals("Math")) {
-            questions = getMathQuestions();
+            questions = Question.getMathQuestions();
         } else if (topic.equals("Physics")) {
-            questions = getPhysicsQuestions();
+            questions = Question.getPhysicsQuestions();
         } else {
-            questions = getMarvelQuestions();
+            questions = Question.getMarvelQuestions();
         }
 
         setContentView(R.layout.activity_answer);
@@ -110,30 +110,5 @@ public class Answer extends Activity {
         });
 
     }
-
-    public ArrayList<Question> getMathQuestions() {
-        ArrayList<Question> questions = new ArrayList<Question>();
-        questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
-        questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
-        questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
-        return questions;
-    }
-
-    public ArrayList<Question> getPhysicsQuestions() {
-        ArrayList<Question> questions = new ArrayList<Question>();
-        questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
-        questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
-        questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
-        return questions;
-    }
-
-    public ArrayList<Question> getMarvelQuestions() {
-        ArrayList<Question> questions = new ArrayList<Question>();
-        questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
-        questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
-        questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
-        return questions;
-    }
-
 
 }

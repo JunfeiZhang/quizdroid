@@ -48,13 +48,13 @@ public class Topics extends Activity {
         // show the appropriate topic overview page depending on what was clicked in MainActivity
         if (topic.equals("Math")) {
             setContentView(R.layout.topic_math);
-            questions = getMathQuestions();
+            questions = Question.getMathQuestions();
         } else if (topic.equals("Physics")) {
             setContentView(R.layout.topic_physics);
-            questions = getPhysicsQuestions();
+            questions = Question.getPhysicsQuestions();
         } else {
             setContentView(R.layout.topic_marvel);
-            questions = getMarvelQuestions();
+            questions = Question.getMarvelQuestions();
         }
 
 
@@ -106,32 +106,6 @@ public class Topics extends Activity {
         correctAnswer = (TextView) findViewById(R.id.correct_answer_text);
         next = (Button) findViewById(R.id.next);
         finish = (Button) findViewById(R.id.finish);
-    }
-
-
-
-    public ArrayList<Question> getMathQuestions() {
-        ArrayList<Question> questions = new ArrayList<Question>();
-        questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
-        questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
-        questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
-        return questions;
-    }
-
-    public ArrayList<Question> getPhysicsQuestions() {
-        ArrayList<Question> questions = new ArrayList<Question>();
-        questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
-        questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
-        questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
-        return questions;
-    }
-
-    public ArrayList<Question> getMarvelQuestions() {
-        ArrayList<Question> questions = new ArrayList<Question>();
-        questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
-        questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
-        questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
-        return questions;
     }
 
 }

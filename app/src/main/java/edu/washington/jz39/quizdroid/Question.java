@@ -2,6 +2,7 @@ package edu.washington.jz39.quizdroid;
 
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Question implements Serializable {
 
@@ -46,5 +47,28 @@ public class Question implements Serializable {
         return option4;
     }
 
+    public static ArrayList<Question> getMathQuestions() {
+        ArrayList<Question> questions = new ArrayList<Question>();
+        questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
+        questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
+        questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
+        return questions;
+    }
+
+    public static ArrayList<Question> getPhysicsQuestions() {
+        ArrayList<Question> questions = new ArrayList<Question>();
+        questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
+        questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
+        questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
+        return questions;
+    }
+
+    public static ArrayList<Question> getMarvelQuestions() {
+        ArrayList<Question> questions = new ArrayList<Question>();
+        questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
+        questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
+        questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
+        return questions;
+    }
 
 }
