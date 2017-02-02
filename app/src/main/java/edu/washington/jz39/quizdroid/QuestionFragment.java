@@ -18,9 +18,11 @@ import android.widget.TextView;
  */
 public class QuestionFragment extends Fragment {
     private RadioGroup choices;
+    private RadioButton choice;
     private TextView questionTextView;
     private Button submitButton;
     private String selectedAnswer;
+    private Questions qs;
     public static String answer = "answer";
 
     public QuestionFragment() {
@@ -34,8 +36,14 @@ public class QuestionFragment extends Fragment {
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_question, container, false);
 
+        qs = (Questions) getArguments().getSerializable("QUESTIONS");
+        Questions.Question q = qs.getQ();
+        choice = (RadioButton) view.findViewById(R.id.choice1);
+        choice.setText(q.getOption(0));
+
         submitButton = (Button) view.findViewById(R.id.submitButton);
         submitButton.setVisibility(View.INVISIBLE);
+
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,6 +51,7 @@ public class QuestionFragment extends Fragment {
 
                 Bundle bundle = new Bundle();
                 bundle.putString(answer, selectedAnswer);
+
                 next.setArguments(bundle);
 
                 FragmentManager fm = getActivity().getFragmentManager();

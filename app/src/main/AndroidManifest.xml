@@ -19,7 +19,7 @@
             android:name=".Quizs"
             android:label="@string/title_activity_quizs" />
         <activity
-            android:name=".Question"
+            android:name=".Questions"
             android:label="@string/title_activity_question" />
         <activity
             android:name=".Answer"

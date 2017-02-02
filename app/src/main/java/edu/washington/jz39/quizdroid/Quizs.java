@@ -9,6 +9,7 @@ import android.app.Activity;
 public class Quizs extends Activity {
 
     String topic;
+    String desc;
 
     private FragmentTransaction ft = getFragmentManager().beginTransaction();
     private Fragment display = null;
@@ -19,10 +20,11 @@ public class Quizs extends Activity {
         setContentView(R.layout.activity_quizs);
         Intent launchingIntent = getIntent();
         topic = launchingIntent.getStringExtra("topic");
-
+        desc = launchingIntent.getStringExtra("desc");
         display = new DescFragment();
         Bundle bundle = new Bundle();
         bundle.putString("TOPIC", topic);
+        bundle.putString("DESC", desc);
         display.setArguments(bundle);
         ft.replace(R.id.fragment_placeholder, display);
         ft.commit();

@@ -26,28 +26,28 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="15sp"
             android:id="@+id/choice1"
-            android:text="1" />
+            android:text="choice1" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15sp"
             android:id="@+id/choice2"
-            android:text="2" />
+            android:text="choice2" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15sp"
             android:id="@+id/choice3"
-            android:text="3" />
+            android:text="choice3" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15sp"
             android:id="@+id/choice4"
-            android:text="4" />
+            android:text="choice4" />
     </RadioGroup>
 
     <Button

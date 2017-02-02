@@ -17,6 +17,12 @@ public class MainActivity extends Activity {
         "Math", "Physics", "Marvel Super Heroes"
     };
 
+    private String[] descs = new String[] {
+            "math desc",
+            "physics desc",
+            "marvel desc"
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +39,7 @@ public class MainActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent(MainActivity.this, Quizs.class);
                 i.putExtra("topic", topics[position]);
+                i.putExtra("desc", descs[position]);
                 startActivity(i);
             }
         });
