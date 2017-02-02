@@ -19,9 +19,6 @@
             android:name=".Quizs"
             android:label="@string/title_activity_quizs" />
         <activity
-            android:name=".Topics"
-            android:label="@string/title_activity_topics" />
-        <activity
             android:name=".Question"
             android:label="@string/title_activity_question" />
         <activity

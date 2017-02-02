@@ -34,6 +34,8 @@ public class Answer extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         Bundle b = this.getIntent().getExtras();
         pos = b.getInt("pos");
         int size = b.getInt("size");

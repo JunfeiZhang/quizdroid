@@ -3,12 +3,13 @@ package edu.washington.jz39.quizdroid;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import java.io.Serializable;
+import java.util.ArrayList;
 
 public class MainActivity extends Activity {
 
@@ -30,10 +31,8 @@ public class MainActivity extends Activity {
         listView.setOnItemClickListener(new ListView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent i = new Intent(MainActivity.this, Topics.class);
+                Intent i = new Intent(MainActivity.this, Quizs.class);
                 i.putExtra("topic", topics[position]);
-                i.putExtra("description", topics[position]);
-                i.putExtra("position", position);
                 startActivity(i);
             }
         });

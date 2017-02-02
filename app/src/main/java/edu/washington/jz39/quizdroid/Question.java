@@ -47,6 +47,15 @@ public class Question implements Serializable {
         return option4;
     }
 
+    public static ArrayList<Question> getTopics(String s){
+        if(s.equals("Math"))
+            return getMathQuestions();
+        else if(s.equals("Physics"))
+            return getPhysicsQuestions();
+        else if(s.equals("Marvel Super Heroes"));
+        return null;
+    }
+
     public static ArrayList<Question> getMathQuestions() {
         ArrayList<Question> questions = new ArrayList<Question>();
         questions.add(new Question("answer 1", "1", "2", "3", "4", "1"));
