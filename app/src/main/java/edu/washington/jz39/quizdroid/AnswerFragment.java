@@ -1,51 +1,85 @@
 package edu.washington.jz39.quizdroid;
 
-
+import android.app.Activity;
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class AnswerFragment extends Fragment {
-    private Button nextButton;
-    private TextView resultTextView, correctAnswerTextView, answerChosenTextView;
+    private String userAnswer;
+    private String correctAnswer;
+    private int correctAnswerCount;
+    private Topic topic;
+    private int questionNumber;
+    private Activity hostActivity;
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        if (getArguments() != null) {
+            userAnswer = getArguments().getString("userAnswer");
+            correctAnswer = getArguments().getString("correctAnswer");
+            correctAnswerCount = getArguments().getInt("correctAnswers");
+            topic = (Topic) getArguments().getSerializable("topic");
+            questionNumber = getArguments().getInt("questionNumber");
+        }
+    }
 
     public AnswerFragment() {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_answer, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_answer, container, false);
 
-        resultTextView = (TextView) view.findViewById(R.id.resultTextView);
-        correctAnswerTextView = (TextView) view.findViewById(R.id.correctAnswerTextView);
+        // access text views and buttons on answer activity
+        TextView userAnswerView = (TextView) rootView.findViewById(R.id.userAnswer);
+        TextView correctAnswerView = (TextView) rootView.findViewById(R.id.correctAnswer);
+        TextView score = (TextView) rootView.findViewById(R.id.score);
+        Button next = (Button) rootView.findViewById(R.id.nextButton);
 
-        String answerSelected = getArguments().getString(QuestionFragment.answer);
-        answerChosenTextView = (TextView) view.findViewById(R.id.answerChosenTextView);
-        answerChosenTextView.setText("your answer: " + answerSelected);
+        // Sets correct page on the layout
+        userAnswerView.setText(userAnswer);
+        correctAnswerView.setText(correctAnswer);
+        score.setText(correctAnswerCount + " answers correct out of " + (questionNumber + 1));
+        final boolean finished = (questionNumber == topic.getQuestions().size() - 1);
 
-        nextButton = (Button) view.findViewById(R.id.nextButton);
-        nextButton.setOnClickListener(new View.OnClickListener() {
+        if (finished) {
+            next.setText("Finish");
+        }
+
+        next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), MainActivity.class);
-                startActivity(intent);
+                if (hostActivity instanceof GameplayActivity) {
+                    if (finished) {
+                        Intent i = new Intent(getActivity(), MainActivity.class);
+                        startActivity(i);
+                    } else {
+                        ((GameplayActivity) hostActivity).loadQuestionFrag(questionNumber + 1,
+                                correctAnswerCount, topic);
+                    }
+                }
             }
         });
 
-        return view;
+
+        return rootView;
     }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+
+        this.hostActivity = activity;
+    }
+
 }
